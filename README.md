@@ -6,17 +6,13 @@ The Agency NB & Onboarding Goal Tracking is used to review the engagement levels
 
 ## Business Purpose  
 
-The **Appointed Agency Engagement v2** sheet helps the team review the Offer Bucket (base number and percentage of offers) of agencies, broken down monthly by location or individual agency:
-
-Appointed Agency Engagement v2 can be viewed by:
+The **Appointed Agency Engagement v2** sheet helps the team review the Offer Bucket (base number and percentage of offers) of agencies, broken down monthly by location or individual agency and can be viewed by:
 - Appointment Year/Month
 - ASM
 - Domicile State
 - Regional Director
 
-The **Agency Onboarding** sheet helps the team monitor Agency goals by Offer, Policy, and Bundle:
-
-Agency Onboarding can be viewed by:
+The **Agency Onboarding** sheet helps the team monitor Agency goals by Offer, Policy, and Bundle and can be viewed by:
 - Appointment Year/Month
 - ASM
 - Domicile State
