@@ -22,6 +22,7 @@ Agency information can be viewed by:
 n/a
 
 ## Metric Definitions & Calculations  
+Agency Onboarding Information V2 sheet:
 | Metric Name  | Description  | Calculation Logic |
 |-------------|-------------|-----------------------------------------|
 | **"Current Month" + Agencies Onboarded** </br> _ex: Apr Agencies Onboarded_ | A count of the distinct agencies onboarded this month | `CountDistinct([agency_name] if [appointment_date] is the current month)` |
