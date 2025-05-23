@@ -2,17 +2,35 @@
 # Agency NB & Onboarding Goal Tracking
 
 ## Dashboard Objective  
-The Agency Onboarding Report gives a high level overview of onboarded agencies.
+The Agency NB & Onboarding Goal Tracking is used to review the engagement levels of appointed agencies and to conduct an overall assessment of onboarding progress.
 
 ## Business Purpose  
-This dashboard allows the Agency team to review all onboarded agencies at a high level, such as by agency count by ASM or Domicile State.  ITD data is displayed, with a highlight on the current month.
 
-Agency information can be viewed by:
-- Appointment Date
-- Attribution Source
-- Affinity Code
+
+Appointed agency engagement v2 can be viewed by:
+- Appointment Year/Month
 - ASM
 - Domicile State
+- Regional Director
+
+Agency onboarding can be viewed by:
+- Appointment Year/Month
+- ASM
+- Domicile State
+- Regional Director
+- Network Name
+- Days Left in Onboarding Period
+- Offer Goal Flag
+- NB Effective Policy Goal Flag
+- NB Effective Bundle Goal Flag
+
+The **Agency onboarding information V2** sheet allows the Agency team to review all onboarded agencies at a high level, such as by agency count by ASM or Domicile State.  ITD data is displayed, with a highlight on the current month and can be viewed by:
+- Appointment Date
+- ASM
+- Domicile State
+- Afinity Code
+- Total Offers
+- Total Policies Sold
 
 ## Data Sources 
 - `branch-dbt-prod.dbt_sigma.sigma_agency_engagement` – ITD Agency Engagement Information.
