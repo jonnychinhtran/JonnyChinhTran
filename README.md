@@ -22,14 +22,28 @@ Agency information can be viewed by:
 n/a
 
 ## Metric Definitions & Calculations  
-Appointed Agency Engagement v2:
+**Appointed Agency Engagement v2**:
 | Metric Name  | Description  | Calculation Logic |
 |-------------|-------------|-----------------------------------------|
 | Monthly Buckets (by Monthly Offer Counts) - **Monthly Appointed Agencies** | Total appointed agencies | `Sum([appointed_agencies_count])` |
 | Monthly Buckets (by Monthly Offer Counts) - **Running Total Appointed Agencies** | A count of the distinct agencies | `CountDistinct([agency_name])` |
+| Monthly Buckets (by Monthly Offer Counts) - **20+ Offer Bucket** | A count of distinct agencies with more than 20 offer buckets | `CountDistinct([agency_name] if [offer_bucket] = "20+")` |
+| Monthly Buckets (by Monthly Offer Counts) - **% 20+ Offer Bucket** | The percentage of the total distinct agencies that have more than 20 offer buckets | `CountDistinct([agency_name] if [offer_bucket] = "20+")/CountDistinct([agency_name])` |
+| Monthly Buckets (by Monthly Offer Counts) - **1-19 Offer Bucket** | A count of distinct agencies with 1–19 offer buckets | `CountDistinct([agency_name] if [offer_bucket] = "1-19")` |
+| Monthly Buckets (by Monthly Offer Counts) - **% 1-19 Offer Bucket** | The percentage of the total distinct agencies that have 1–19 offer buckets | `CountDistinct([agency_name] if [offer_bucket] = "1-19")/CountDistinct([agency_name])` |
+| Monthly Buckets (by Monthly Offer Counts) - **Zero Offer Bucket** | A count of distinct agencies with zero offer buckets | `CountDistinct([agency_name] if [offer_bucket] = "0")` |
+| Monthly Buckets (by Monthly Offer Counts) - **% Zero Offer Bucket** | The percentage of the total distinct agencies that have zero offer buckets | `CountDistinct([agency_name] if [offer_bucket] = "0")/CountDistinct([agency_name])` |
 
+**Agency Onboarding**:
+| Metric Name  | Description  | Calculation Logic |
+|-------------|-------------|-----------------------------------------|
+| Agency Goal Performance with First Login in "Selected Year" - **Days Left in Onboarding Period** </br> _(ex:  Agency Goal Performance with First Login in 2025)_ | The number of days left in onboarding period | `If([onboarding_evaluation_end_date] <= Today(), "90 Day Period Over", Text(DateDiff("day", Today(), [onboarding_evaluation_end_date]))) and if [affinity_code_first_login_year] is Selected Year` |
+| Agency Goal Performance with First Login in "Selected Year" - **Offers Goal Flag** </br> _(ex:  Agency Goal Performance with First Login in 2025)_ | The status of offers goal flag | `If([d90_offer_count] >= [Set-Offer-Goal], "Goal Met", "Goal Not Met") and if [affinity_code_first_login_year] is Selected Year`
+| Agency Goal Performance with First Login in "Selected Year" - **NB Effective Policy Goal Flag** </br> _(ex:  Agency Goal Performance with First Login in 2025)_ | The status of NB effective policy goal flag | `If([d90_written_policy_count] >= [Set-Policy-Goal], "Goal Met", "Goal Not Met") and if [affinity_code_first_login_year] is Selected Year`
+| Agency Goal Performance with First Login in "Selected Year" - **NB Effective Bundle Goal Flag** </br> _(ex:  Agency Goal Performance with First Login in 2025)_ | The status of NB effective bundle goal flag | `If(CountDistinct([account_id] if [d90_has_auto_home_bundle] = true or [d90_has_auto_condo_bundle] = true) >= [Set-Bundle-Goal], "Goal Met", "Goal Not Met") and if [affinity_code_first_login_year] is Selected Year`
+| Agency Goal Performance with First Login in "Selected Year" - *All Goals Flag** </br> _(ex:  Agency Goal Performance with First Login in 2025)_ | The status of all goal flag | `If(Both _Offers Goal Flag_ and _NB Effective Policy Goal Flag_ and _NB Effective Bundle Goal Flag_ are marked as "Goal Met", "Goal Met", "Goal Not Met") and if [affinity_code_first_login_year] is Selected Year`
 
-Agency Onboarding Information V2 sheet:
+**Agency Onboarding Information V2 sheet**:
 | Metric Name  | Description  | Calculation Logic |
 |-------------|-------------|-----------------------------------------|
 | **"Current Month" + Agencies Onboarded** </br> _ex: Apr Agencies Onboarded_ | A count of the distinct agencies onboarded this month | `CountDistinct([agency_name] if [appointment_date] is the current month)` |
