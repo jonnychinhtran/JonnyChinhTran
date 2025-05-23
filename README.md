@@ -22,6 +22,13 @@ Agency information can be viewed by:
 n/a
 
 ## Metric Definitions & Calculations  
+Appointed Agency Engagement v2:
+| Metric Name  | Description  | Calculation Logic |
+|-------------|-------------|-----------------------------------------|
+| Monthly Buckets (by Monthly Offer Counts) - **Monthly Appointed Agencies** | Total appointed agencies | `Sum([appointed_agencies_count])` |
+| Monthly Buckets (by Monthly Offer Counts) - **Running Total Appointed Agencies** | A count of the distinct agencies | `CountDistinct([agency_name])` |
+
+
 Agency Onboarding Information V2 sheet:
 | Metric Name  | Description  | Calculation Logic |
 |-------------|-------------|-----------------------------------------|
